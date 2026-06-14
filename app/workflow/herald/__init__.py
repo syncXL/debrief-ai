@@ -1,0 +1,1 @@
+"""Herald graph package."""

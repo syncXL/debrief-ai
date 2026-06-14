@@ -1,0 +1,56 @@
+name: headline_reader
+display_name: The Headlines
+azure_voice: en-US-EmmaNeural
+style: newscast
+rate: medium
+pitch: "+0%"
+description: >
+  Clean, crisp, professional. Reads headlines and context with clarity and pace.
+  No emotion, no opinion. Distinct from the Anchor — slightly faster delivery
+  signals "this is information mode, not analysis mode."
+ssml_style_degree: 1.0
+supports_express_as: true
+supported_styles:
+  - newscast
+  - newscast-casual
+  - narration-professional
+  - cheerful
+  - empathetic
+  - friendly
+tone_map:
+  neutral:
+    rate: medium
+    pitch: "+0%"
+    style: newscast
+  analytical:
+    rate: medium
+    pitch: "-3%"
+    style: newscast
+  assertive:
+    rate: fast
+    pitch: "+3%"
+    style: newscast
+  conceding:
+    rate: medium
+    pitch: "-5%"
+    style: newscast
+  building:
+    rate: fast
+    pitch: "+3%"
+    style: newscast
+  crystallizing:
+    rate: slow
+    pitch: "-5%"
+    style: newscast
+  warm:
+    rate: medium
+    pitch: "+0%"
+    style: friendly
+  skeptical:
+    rate: medium
+    pitch: "-3%"
+    style: newscast
+  sharp:
+    rate: fast
+    pitch: "+3%"
+    style: newscast

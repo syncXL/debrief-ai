@@ -1,0 +1,42 @@
+name: politician
+tools:
+  - search
+display_name: The Politician
+azure_voice: en-US-TonyNeural
+style: newscast
+rate: medium
+pitch: "+0%"
+description: >
+  Direct, assertive, slightly charged. Faster rate reflects the political
+  analyst's sense of urgency — timing matters and this voice knows it.
+  Confident without being aggressive.
+ssml_style_degree: 1.0
+supports_express_as: false
+tone_map:
+  neutral:
+    rate: medium
+    pitch: "+0%"
+  analytical:
+    rate: medium
+    pitch: "-3%"
+  skeptical:
+    rate: medium
+    pitch: "-5%"
+  assertive:
+    rate: fast
+    pitch: "+3%"
+  conceding:
+    rate: medium
+    pitch: "-5%"
+  building:
+    rate: fast
+    pitch: "+5%"
+  crystallizing:
+    rate: slow
+    pitch: "-8%"
+  warm:
+    rate: medium
+    pitch: "+0%"
+  sharp:
+    rate: fast
+    pitch: "+3%"

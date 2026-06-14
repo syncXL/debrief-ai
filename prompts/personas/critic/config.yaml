@@ -1,0 +1,62 @@
+name: critic
+tools:
+  - search
+display_name: The Critic
+azure_voice: en-US-JasonNeural
+style: newscast
+rate: medium
+pitch: "+0%"
+description: >
+  Sharp, incisive, slightly edged. Faster delivery reflects the Critic's
+  impatience with incomplete narratives. Not aggressive — precise.
+  The voice should feel like it's cutting through noise, not shouting.
+ssml_style_degree: 1.0
+supports_express_as: true
+supported_styles:
+  - newscast
+  - angry
+  - cheerful
+  - excited
+  - friendly
+  - hopeful
+  - sad
+  - shouting
+  - unfriendly
+  - whispering
+tone_map:
+  neutral:
+    rate: medium
+    pitch: "+0%"
+    style: newscast
+  analytical:
+    rate: medium
+    pitch: "-3%"
+    style: newscast
+  skeptical:
+    rate: medium
+    pitch: "-5%"
+    style: unfriendly
+  assertive:
+    rate: fast
+    pitch: "+3%"
+    style: newscast
+  conceding:
+    rate: medium
+    pitch: "-5%"
+    style: friendly
+  building:
+    rate: fast
+    pitch: "+5%"
+    style: excited
+  crystallizing:
+    rate: slow
+    pitch: "-8%"
+    style: newscast
+  warm:
+    rate: medium
+    pitch: "+0%"
+    style: friendly
+  sharp:
+    rate: fast
+    pitch: "+5%"
+    style: angry

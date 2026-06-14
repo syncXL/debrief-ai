@@ -1,0 +1,43 @@
+name: historian
+tools:
+  - search
+display_name: The Historian
+azure_voice: en-GB-LibbyNeural
+style: newscast
+rate: medium
+pitch: "+0%"
+description: >
+  Thoughtful, considered, slightly reflective. The Historian speaks last
+  and the voice should feel like it carries the weight of context.
+  British accent and measured pace distinguish it clearly from
+  the faster analytical voices.
+ssml_style_degree: 0.8
+supports_express_as: false
+tone_map:
+  neutral:
+    rate: medium
+    pitch: "+0%"
+  analytical:
+    rate: medium
+    pitch: "-3%"
+  skeptical:
+    rate: medium
+    pitch: "-5%"
+  assertive:
+    rate: medium
+    pitch: "+3%"
+  conceding:
+    rate: slow
+    pitch: "-5%"
+  building:
+    rate: fast
+    pitch: "+3%"
+  crystallizing:
+    rate: slow
+    pitch: "-8%"
+  warm:
+    rate: medium
+    pitch: "+0%"
+  sharp:
+    rate: fast
+    pitch: "+3%"

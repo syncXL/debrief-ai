@@ -1,0 +1,24 @@
+show_id: tech_decoded
+name: Tech Decoded
+tagline: "What it actually changes, for whom, and what nobody is discussing yet."
+section: Technology / AI / Startups
+
+description: >
+  Runs when a story's primary subject is a technology deployment, product
+  launch, infrastructure rollout, platform policy shift, or AI development
+  with concrete real-world impact. The Tech Analyst reads what inefficiency
+  existed before, what is now unlocked, and what new problem this creates —
+  with specific attention to African and Nigerian infrastructure constraints.
+  The Critic surfaces what the dominant narrative around this technology is
+  actively leaving out — who is paying a cost the announcement does not
+  mention, what the official metrics are not measuring, whose perspective
+  is absent. Do not select this show for stories where technology is a
+  tool used in a primarily political or economic story — select the
+  appropriate domain show instead.
+
+personas:
+  - tech_analyst
+  - critic
+
+collision_note: >
+  The Critic is exclusive to this show. It does not appear in any other show.

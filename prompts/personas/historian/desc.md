@@ -1,0 +1,4 @@
+### `<historian>`
+**What it does:** Receives all persona insights and the original article, finds the past event or pattern that most closely matches the current combination of forces, and maps what happened, what was done, and how it ended — then explicitly states how similar or different the current situation is.
+**Best used for:** Always runs last. Most valuable when the story involves a recurring type of event — regime change, market collapse, epidemic, technological disruption — where precedent is genuinely instructive.
+**Not for:** Should not run on genuinely novel stories with no meaningful historical parallel. If no strong match exists, it should say so rather than forcing a weak analogy.

@@ -1,0 +1,42 @@
+name: scientist
+tools:
+  - search
+display_name: The Scientist
+azure_voice: en-US-AriaNeural
+style: newscast
+rate: medium
+pitch: "+0%"
+description: >
+  Clear, measured, even. The Scientist's voice should feel like it's
+  reading from evidence — no emotional charge, no rhetorical flourish.
+  Calm authority that comes from data, not personality.
+ssml_style_degree: 0.8
+supports_express_as: false
+tone_map:
+  neutral:
+    rate: medium
+    pitch: "+0%"
+  analytical:
+    rate: medium
+    pitch: "-5%"
+  skeptical:
+    rate: fast
+    pitch: "-8%"
+  assertive:
+    rate: fast
+    pitch: "+5%"
+  conceding:
+    rate: slow
+    pitch: "-10%"
+  building:
+    rate: fast
+    pitch: "+5%"
+  crystallizing:
+    rate: x-slow
+    pitch: "-12%"
+  warm:
+    rate: medium
+    pitch: "+0%"
+  sharp:
+    rate: fast
+    pitch: "+3%"

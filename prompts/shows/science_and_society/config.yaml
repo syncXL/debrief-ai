@@ -1,0 +1,25 @@
+show_id: science_and_society
+name: Science & Society
+tagline: "What the evidence actually shows, and what the incentive structure means it won't matter."
+section: Health / Climate / Energy
+
+description: >
+  Runs when a story makes a specific empirical claim — about health outcomes,
+  environmental data, energy capacity, climate impact, or scientific findings
+  — that is being used to justify a policy, a product, or a narrative. The
+  Scientist interrogates the claim: what methodology produced it, what
+  confidence level is warranted, and what a scientifically literate reading
+  actually concludes versus what is being reported. The Economist reads the
+  incentive and cost structure: who bears the cost of the finding being true,
+  who benefits from it being accepted or ignored, and what the second-order
+  effects are. Do not select this show for health or environment stories that
+  are primarily about political decisions or governance — select Political
+  Pulse instead. Both personas need a concrete empirical claim to engage with.
+
+personas:
+  - scientist
+  - economist
+
+collision_note: >
+  The Economist output is shared. If Economy Today is also selected for
+  this article, the Economist runs once and its output is consumed by both shows.

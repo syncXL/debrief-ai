@@ -1,0 +1,33 @@
+services:
+  debriefai:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    restart: unless-stopped
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    networks:
+      - debrief-net
+  neo4j:
+    image: neo4j:5-community
+    environment:
+      NEO4J_AUTH: neo4j/debrief_neo4j
+    volumes:
+      - neo4j_data:/data
+    healthcheck:
+      test: ["CMD", "neo4j", "status"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+    networks:
+      - debrief-net
+
+volumes:
+  neo4j_data:
+
+networks:
+  debrief-net:
+    driver: bridge

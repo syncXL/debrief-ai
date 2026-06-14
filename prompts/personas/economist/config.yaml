@@ -1,0 +1,42 @@
+name: economist
+tools:
+  - search
+display_name: The Economist
+azure_voice: en-GB-RyanNeural
+style: newscast
+rate: medium
+pitch: low
+description: >
+  Measured, authoritative, slightly formal. British accent adds credibility
+  to analytical delivery. Unhurried — this persona follows logic carefully
+  and the voice should reflect that deliberateness.
+ssml_style_degree: 0.8
+supports_express_as: false
+tone_map:
+  neutral:
+    rate: medium
+    pitch: "+0%"
+  analytical:
+    rate: medium
+    pitch: "-5%"
+  skeptical:
+    rate: fast
+    pitch: "-8%"
+  assertive:
+    rate: fast
+    pitch: "+5%"
+  conceding:
+    rate: slow
+    pitch: "-10%"
+  building:
+    rate: fast
+    pitch: "+5%"
+  crystallizing:
+    rate: x-slow
+    pitch: "-12%"
+  warm:
+    rate: medium
+    pitch: "+0%"
+  sharp:
+    rate: fast
+    pitch: "+3%"

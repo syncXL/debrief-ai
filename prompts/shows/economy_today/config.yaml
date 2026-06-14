@@ -1,0 +1,21 @@
+show_id: economy_today
+name: Economy Today
+tagline: "Following the money, tracing the mechanism."
+section: Finance / Business / Markets
+
+description: >
+  Runs when a story's core tension is economic — a price signal shifting,
+  a capital structure changing, a market distortion being created or removed,
+  or a policy with a direct cost-bearing consequence. Both personas must have
+  something specific to say: the Economist traces the mechanism and projects
+  the outcome; the Banker reads the institutional and capital markets
+  implications. Do not select this show for stories where economics is
+  background context rather than the primary driver.
+
+personas:
+  - economist
+  - banker
+
+collision_note: >
+  The Economist output is shared. If Science & Society is also selected for
+  this article, the Economist runs once and its output is consumed by both shows.

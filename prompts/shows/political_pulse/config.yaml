@@ -1,0 +1,23 @@
+show_id: political_pulse
+name: Political Pulse
+tagline: "Who holds power, what they're protecting, and what it costs."
+section: Politics / Policy / Government
+
+description: >
+  Runs when a story involves a deliberate government decision, policy shift,
+  appointment, or regulatory action where political timing and legal mechanism
+  are both substantive. The Politician reads why this decision was made now
+  and who benefits; the Lawyer reads what specifically changed in the legal
+  or regulatory structure and where the exploit is. Do not select this show
+  for stories where government is merely mentioned — both personas need a
+  concrete, specific contribution. A bureaucratic process update with no
+  discernible political logic does not qualify.
+
+personas:
+  - politician
+  - lawyer
+
+collision_note: >
+  The Politician output is shared. If The Socialite Report is also selected
+  for this article, the Politician runs once and its output is consumed by
+  both shows.

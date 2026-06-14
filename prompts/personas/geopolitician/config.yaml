@@ -1,0 +1,67 @@
+name: geopolitician
+tools:
+  - search
+display_name: The Geopolitician
+azure_voice: en-US-GuyNeural
+style: newscast
+rate: slow
+pitch: low
+description: >
+  Deep, unhurried, strategic. Speaks like someone who thinks in decades
+  not news cycles. The slowest rate of the analytical personas —
+  geopolitical logic unfolds deliberately and the voice should match.
+ssml_style_degree: 0.8
+supports_express_as: true
+supports_emphasis: true
+supported_styles:
+  - newscast
+  - angry
+  - calm
+  - cheerful
+  - disgruntled
+  - embarrassed
+  - excited
+  - friendly
+  - hopeful
+  - sad
+  - shouting
+  - terrified
+  - unfriendly
+  - whispering
+tone_map:
+  neutral:
+    rate: slow
+    pitch: "+0%"
+    style: newscast
+  analytical:
+    rate: slow
+    pitch: "-3%"
+    style: newscast
+  skeptical:
+    rate: medium
+    pitch: "-5%"
+    style: unfriendly
+  assertive:
+    rate: medium
+    pitch: "+3%"
+    style: newscast
+  conceding:
+    rate: slow
+    pitch: "-5%"
+    style: friendly
+  building:
+    rate: medium
+    pitch: "+3%"
+    style: excited
+  crystallizing:
+    rate: x-slow
+    pitch: "-8%"
+    style: newscast
+  warm:
+    rate: slow
+    pitch: "+0%"
+    style: friendly
+  sharp:
+    rate: medium
+    pitch: "+3%"
+    style: newscast

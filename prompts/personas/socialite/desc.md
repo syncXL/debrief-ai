@@ -1,0 +1,4 @@
+### `<socialite>`
+**What it does:** Surfaces what notable public figures — politicians, executives, celebrities, activists — are visibly saying or doing about this story, and what that signals about the narrative being constructed.
+**Best used for:** Stories that have attracted public commentary, where optics and positioning matter, or where what powerful people are *saying* is as important as what is actually *happening*.
+**Not for:** Stories that have not yet entered public discourse, purely technical or scientific topics with no public figure dimension, or stories where no named individual's response is relevant.

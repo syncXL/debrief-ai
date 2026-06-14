@@ -1,0 +1,24 @@
+show_id: world_affairs
+name: World Affairs
+tagline: "States, interests, and the forces that don't make the headline."
+section: World / International
+
+description: >
+  Runs when a story involves cross-border power dynamics — bilateral agreements,
+  infrastructure deals with strategic dimensions, sanctions, military posture,
+  trade blocs, or any event where the primary tension is between state or
+  non-state actors operating across national boundaries. The Geopolitician
+  reads who gains and loses leverage and what each actor is forced to do next;
+  the Historian identifies the structural pattern and finds the closest
+  historical precedent, explicitly assessing where the current situation
+  diverges from it. Do not select this show for domestic stories with
+  international mentions, or for trade stories where the mechanism is
+  purely economic rather than strategic.
+
+personas:
+  - geopolitician
+  - historian
+
+collision_note: >
+  The Historian is exclusive to this show. It does not run in any other
+  show or contribute historical context to other personas.

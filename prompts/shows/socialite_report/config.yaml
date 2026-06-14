@@ -1,0 +1,25 @@
+show_id: socialite_report
+name: The Socialite Report
+tagline: "The performance, the positioning, and what the staging reveals."
+section: Entertainment / Culture
+
+description: >
+  Runs when a story's primary subject is in the entertainment, culture, or
+  celebrity space AND named public figures have made specific, verifiable
+  public statements — or are conspicuously silent — in ways that reveal
+  something about how the narrative is being managed. The Socialite reads
+  the public performance: what notable figures are saying, how they are
+  saying it, and what their positioning reveals about their interest. The
+  Politician reads the power logic underneath: why this statement was made
+  now, for which audience, and what political or institutional cost is being
+  avoided or transferred. Do not select this show if no named public figure
+  has a discernible stake in the story's framing, or if the story is a
+  straightforward entertainment report with no narrative management dimension.
+
+personas:
+  - socialite
+  - politician
+
+collision_note: >
+  The Politician output is shared. If Political Pulse is also selected for
+  this article, the Politician runs once and its output is consumed by both shows.
