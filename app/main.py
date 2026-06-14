@@ -128,6 +128,17 @@ async def run_archivist_for_kb(kb_content: dict):
         print(f"Archivist failed for kb_content: {e}")
 
 
+_NODE_TO_TYPE = {
+    "headlines": "headline",
+    "show_intro": "show_intro",
+    "conclude_show": "outro",
+    "show_segment": "segment",
+    "show_to_show": "transition",
+    "headline_to_show": "transition",
+    "conclude_episode": "conclusion",
+}
+
+
 async def episode_stream_generator(preference: str):
     graph = build_graph()
     ind = 0
@@ -138,30 +149,32 @@ async def episode_stream_generator(preference: str):
         stream_mode="values",
     ):
         final_state = state
-        transcripts = {t["pos"]: t for t in state.get("transcripts", [])}
+        transcripts = {t["script"]["pos"]: t for t in state.get("transcripts", [])}
 
-        # Drain every transcript that's ready (audio synthesized), in order
-        while ind in transcripts and transcripts[ind].get("type") == 1 and transcripts[ind].get("url"):
-            t = transcripts[ind]
+        # Drain every transcript that has audio, in order
+        while ind in transcripts and transcripts[ind]["script"].get("url"):
+            s = transcripts[ind]["script"]
             event = {
-                "pos": t["pos"],
-                "tag": t.get("node"),
-                "audio_url": t["url"],
-                "transcript": t.get("script", ""),
+                "pos": s["pos"],
+                "type": _NODE_TO_TYPE.get(s.get("node", ""), s.get("node")),
+                "show_id": s.get("tag") or None,
+                "audio_url": s.get("url"),
+                "transcript": s.get("sketch", ""),
             }
             yield f"data: {json.dumps(event)}\n\n"
             ind += 1
 
     # Final flush — emit anything left over even if audio failed,
     # so the frontend gets full ordering and can decide how to handle nulls
-    transcripts = {t["pos"]: t for t in final_state.get("transcripts", [])}
+    transcripts = {t["script"]["pos"]: t for t in final_state.get("transcripts", [])}
     while ind in transcripts:
-        t = transcripts[ind]
+        s = transcripts[ind]["script"]
         event = {
-            "pos": t["pos"],
-            "tag": t.get("tag"),
-            "audio_url": t.get("url") or None,
-            "transcript": t.get("script", ""),
+            "pos": s["pos"],
+            "type": _NODE_TO_TYPE.get(s.get("node", ""), s.get("node")),
+            "show_id": s.get("tag") or None,
+            "audio_url": s.get("url") or None,
+            "transcript": s.get("sketch", ""),
         }
         yield f"data: {json.dumps(event)}\n\n"
         ind += 1
@@ -179,6 +192,8 @@ async def episode_stream_generator(preference: str):
 @app.get("/stream")
 async def stream_episode(
     preference: str = Query(...),
+    hours: int = Query(default=24),
+    n_story: int = Query(default=10),
 ):
     return StreamingResponse(
         episode_stream_generator(preference),

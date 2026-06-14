@@ -1,5 +1,6 @@
 import json
 from datetime import datetime
+from langchain_core.tools import tool
 from app import dependencies
 from .inquisitor.pipeline import get_pipeline as inquisitor
 from . import base_state
@@ -15,10 +16,11 @@ def format_story(story : base_state.Story):
     fmt_story = fmt_head + "\n" + fmt_body
     return fmt_story
 
+# @tool
 async def query_graph(query: str) -> str:
     """Queries the knowledge graph (read or write).
     Args:
-        query: The Cypher query to execute. Embed all values directly 
+        query: The Cypher query to execute. Embed all values directly
                in the query string (e.g. MATCH (n:Person {name: 'Alice'})).
     Returns:
         JSON string of results for read queries, or a success/error message.

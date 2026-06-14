@@ -1,3 +1,4 @@
+import asyncio
 import logging
 from .pipelines import pipelines
 from langgraph.types import Send,Command
@@ -49,15 +50,17 @@ async def generate_audio(state: base_state.DebriefState) -> base_state.DebriefSt
     pending = [t for t in state.get("transcripts", []) if not t["script"].get("url")]
     logger.info("[generate_audio] Processing %d transcript(s) without audio", len(pending))
     generator = pipelines.get("tts")
-    updated = []
-    for script_obj in pending:
+
+    async def _synthesize(script_obj: dict) -> dict:
         node = script_obj["script"].get("node", "?")
         pos = script_obj["script"].get("pos", "?")
         logger.info("[generate_audio] Generating audio — node=%s pos=%s", node, pos)
         response = await generator.ainvoke(script_obj)
-        updated.append({**script_obj, "script": {**script_obj["script"], "url": response["audio_url"]}})
-        logger.info("[generate_audio] Audio ready — node=%s pos=%s url=%s", node, pos, response.get("audio_url", "?")[:60])
-    return {"transcripts": updated}
+        logger.info("[generate_audio] Audio ready — node=%s pos=%s url=%s", node, pos, str(response.get("audio_url", "?"))[:60])
+        return {**script_obj, "script": {**script_obj["script"], "url": response["audio_url"]}}
+
+    updated = await asyncio.gather(*[_synthesize(s) for s in pending])
+    return {"transcripts": list(updated)}
 
 
 async def get_show(story_state : base_state.Story) -> base_state.Story:

@@ -12,7 +12,7 @@ async def search(inquisitor_state : state.InquisitorState) -> state.SearchOutput
     labels = await kb_client.get_labels()
     instruction = dependencies.load_instruction("prompts/inquisitor.md", labels=", ".join(labels), doc=cypher_docs)
     search_agent = create_agent(llm.client,tools=tools.get_tools(), system_prompt=instruction)
-    response = search_agent.invoke({"messages": [HumanMessage(content=query)]})
+    response = await search_agent.ainvoke({"messages": [HumanMessage(content=query)]})
     final_msg = response["messages"][-1]
     content = final_msg.content if isinstance(final_msg.content, str) else ""
 
