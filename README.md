@@ -1,7 +1,16 @@
 # The Debrief
 
-An AI-powered multi-voice news podcast generator. Given a topic preference, it fetches live news, routes stories to specialist shows, generates per-persona spoken analysis, and streams back a full audio episode — each voice distinct, each segment structured as a broadcast segment.
+An AI-powered multi-voice news podcast generator built on Azure AI Foundry — 
+GPT-4.1 for all LLM inference and Azure Neural TTS for expressive multi-persona 
+synthesis across 11 distinct voices.
 
+Given a topic preference, it fetches live news, routes stories to specialist 
+shows, generates per-persona spoken analysis, and streams back a full audio 
+episode. A persistent Neo4j knowledge graph solves a core problem in episodic 
+AI content: a Researcher agent queries prior context before each episode 
+generates, and an Archivist agent writes extracted entities and relationships 
+back after — so the system accumulates memory across episodes and avoids 
+repeating the same framing show after show.
 ## How it works
 
 ```
@@ -135,4 +144,4 @@ prompts/
   archivist/           Cypher read/write instructions and output schemas
   router.md            Show selection and persona dedup instructions
   ssml_generator.md    SSML template and tone mapping instructions
-```
+``` 
